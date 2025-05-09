@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, html{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.home-img {
+    width: 100%;
+    max-width: 300px; /* opcional, limite no mobile */
+    margin: 0 auto;
+}
+
+/* Definindo paleta de cores */
+
+:root{
+    --blue:#083b99;
+    --white:#fff;
+    --dark:#000000;
+}
+body{
+    color: var(--dark);
+    background: var(--white);
+}
+
+.string {
+    color: blue;
+}
+
+.string1 {
+    color: #b88806;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background: var(--white);
+    transition: all 0.5s;
+    position: fixed;
+}
+.navigation .logo{
+    color: var(--blue);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.logo span{
+    color: var(--dark);
+}
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+.navigation ul li a{
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+.navigation ul li a:hover{
+    color: var(--blue);
+}
+.navigation i{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.menu{
+    cursor: pointer;
+    display: none;
+}
+.menu .bar{
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--dark);
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3){
+    background: var(--blue);
+}
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10%;
+}
+.home-text{
+    max-width: 37rem;
+}
+.home-text .text-h4{
+    font-size: 1.5rem;
+    color: var(--blue);
+    margin-bottom: 1rem;
+}
+.home-text .text-h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+}
+.home-text p{
+    margin-bottom: 4rem;
+}
+.home-btn{
+    padding: 15px 45px;
+    background: blue;
+    color: white;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+.home-btn:hover{
+    background: #161616;
+}
+.home-img img{
+    width: 100%;
+}
+
+.site-footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+    position: relative;
+    z-index: 10;
+    bottom: 0;
+    width: 100%;
+    clear: both; /* Garante que o footer não se sobreponha a outros elementos */
+}
+
+.site-footer .footer-logo a,
+.site-footer .footer-links a,
+.site-footer .footer-social a {
+    color: white;
+    text-decoration: none;
+}
+
+.site-footer .footer-logo a:hover,
+.site-footer .footer-links a:hover,
+.site-footer .footer-social a:hover {
+    color: #ddd;
+}
+
+.site-footer .footer-bottom p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Caso o footer seja sobreposto ou desapareça, podemos adicionar um clearfix */
+body {
+    margin-bottom: 120px; /* Garantir que haja espaço para o footer */
+}
+
+/* Ajustes para o layout */
+.main {
+    min-height: 100vh; /* Garante que o main ocupe todo o espaço possível */
+    padding-bottom: 120px; /* Deixe espaço para o footer */
+}
+
+/* Global */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsividade no mobile */
+@media (max-width: 785px) {
+    .home-img {
+        width: 100%;
+        max-width: 300px; /* opcional */
+        margin: 0 auto;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+
+@media (max-width:785px) {
+    .navigation{
+        padding: 18px 20px;
+    }
+    .menu{
+        display: block;
+    }
+    .menu.ativo .bar:nth-child(1){
+        transform:  translateY(8px) rotate(45deg);
+    }
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu.ativo .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: var(--white);
+        gap: -10px;
+        transition: 0.3s;
+    }
+    .nav-menu.ativo{
+        right: 0;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    /*main*/
+    .home{
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        overflow-x: hidden;
+        gap: 5rem;
+    }
+    .home .text-h4{
+        font-size: 15px;
+    }
+    .home .text-h1{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .home p{
+        font-size: 15px;
+    }
+    .home-img{
+        width: 100%;
+    }
+}
+
+.home-video {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+  
+  .home-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 785px) {
+    .home-video {
+      padding: 10px;
+    }
+  }
+
+  .home-video video::-webkit-media-controls {
+    display: none !important;
+}
+
+.home-video video {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#audio-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
